@@ -1,0 +1,85 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# MIPD
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of MIPD is to ...
+
+## Installation
+
+You can install the development version of MIPD from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("Alepescinaa/MIPD")
+```
+
+## Example
+
+This is a basic example:
+
+```{r example}
+library(MIPD)
+```
+
+load dataset
+
+```{r}
+data(toy_data_MM)
+```
+
+To inspect help file main function:
+
+```{r,eval=F}
+?run_mipd
+```
+
+
+run imputation and illness death model
+
+```{r}
+
+pooled_fit <- run_mipd(
+  toy_data_MM,
+  m = 5,
+  cov_vector = c("cov1", "cov2", "cov3"),
+  clock_assumption = "forward",
+  distribution = "gompertz",
+  inner_cores = 2,
+  max_iter = 10,
+  eps = 1e-3
+)
+```
+See model results:
+
+
+
+```{r}
+class(pooled_fit)
+summary(pooled_fit)
+mod1 <- pooled_fit[[1]]
+class(mod1)
+print(mod1)
+confint(mod1)
+attr(mod1, "rubin")
+coef(mod1)
+summary(mod1)
+
+```
+
+

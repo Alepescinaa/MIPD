@@ -1,0 +1,19 @@
+#' Dataset containing imputed disease progression data for each individual.
+#'
+#' This dataset includes information on disease status, disease onset, and relevant covariates
+#' for a cohort of 5000 individuals. Disease onset and status were previously imputed.
+#'
+#' @format A data frame with 5000 rows and 11 columns:
+#' \describe{
+#'   \item{patient_id}{Unique identifier for each patient.}
+#'   \item{cov1, cov2, cov3}{One continuous and two binary covariates.}
+#'   \item{dead}{Binary indicator of whether the patient is deceased.}
+#'   \item{death_time}{Time of death if occurred, or censoring time otherwise.}
+#'   \item{onset}{Binary indicator of disease onset.}
+#'   \item{onset_age}{Age at disease onset, or \code{death_time} if no onset was observed.}
+#'   \item{age}{Patient's age at a given visit.}
+#'   \item{visits}{Indicator of the patient's visit number.}
+#'   \item{last_bfo}{Age at the last observed visit before disease onset, if applicable.}
+#' }
+#' @source Dataset generated using the imputation functions from this package.
+"imputed_dataset_MM"
