@@ -7,7 +7,7 @@
 
 <!-- badges: end -->
 
-The goal of MIPD is to …
+Multiple imputation for panel data: Cox-model-based disease-onset probabilities for trajectory imputation in multi-state settings (baseline foundation for STREAMS).  
 
 ## Installation
 
